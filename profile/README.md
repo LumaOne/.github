@@ -1,18 +1,18 @@
-# 🛡️ Spam Fighter (LumaOne)
+# 🛡️ LumaOne
 
-**AI-Powered Multi-Tenant Email Security and Intelligence Platform**
+**AI-Powered Email Intelligence Platform**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 
-> **LumaOne** is a comprehensive email intelligence platform that helps users manage email overload, detect threats, and automate email management tasks using advanced AI classification and tenant-configurable LLM providers.
+> **LumaOne** is a comprehensive email intelligence platform that helps users manage email overload, detect threats, and automate email management tasks using advanced AI classification and multi-LLM provider support.
 
 ---
 
-## 🎯 **Overview**
+## 🎯 **What We Do**
 
-Spam Fighter provides intelligent email analysis for enterprise and individual users through:
+LumaOne provides intelligent email analysis for enterprise and individual users through:
 
 - **🤖 Multi-LLM Support**: OpenAI, Azure OpenAI, Ollama, and custom endpoints
 - **📧 Smart Classification**: Spam detection, category classification, phishing detection  
@@ -24,138 +24,35 @@ Spam Fighter provides intelligent email analysis for enterprise and individual u
 
 ---
 
-## 🏗️ **Architecture**
+## 🏗️ **Platform Architecture**
 
-**Dual-API Design** for optimal separation of concerns:
+**Modern, Scalable Design** built for enterprise and individual use:
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Frontend      │    │    App API      │    │    AI API       │
 │   (Next.js)     │◄──►│   (Fastify)     │◄──►│   (FastAPI)     │
-│   Port: 3000    │    │   Port: 3001    │    │   Port: 8001    │
+│                 │    │                 │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
                                │
                        ┌───────▼────────┐
-                       │   Supabase     │
+                       │   Database     │
                        │  (PostgreSQL)  │
                        └────────────────┘
 ```
 
-### **Components**
+### **Technology Stack**
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
-| **Frontend** | Next.js + Mantine | User interface and dashboard |
+| **Frontend** | Next.js + Mantine | Modern, responsive user interface |
 | **App API** | Fastify + Supabase | Authentication, database, core logic |
 | **AI API** | FastAPI + LLM Router | Email classification, smart replies |
-| **Database** | Supabase (PostgreSQL) | Multi-tenant data with RLS |
+| **Database** | PostgreSQL | Multi-tenant data with security |
 
 ---
 
-## 🚀 **Quick Start**
-
-### **Prerequisites**
-
-- **Python 3.8+** with `uv` package manager
-- **Node.js 18+** with `bun` package manager (preferred)
-- **Supabase** project setup
-
-### **1. Clone & Setup**
-
-```bash
-git clone <repository-url>
-cd spam_fighter
-```
-
-### **2. Configure Environment**
-
-```bash
-# Copy environment templates
-cp ai_api/.env.example ai_api/.env
-cp app_api/.env.example app_api/.env
-cp frontend/.env.example frontend/.env
-
-# Edit each .env file with your configurations
-```
-
-### **3. Start Services**
-
-**Terminal 1 - AI API:**
-```bash
-cd ai_api
-uv venv && source .venv/bin/activate
-uv pip install -r requirements.txt
-python main.py
-# ➜ http://localhost:8001
-```
-
-**Terminal 2 - App API:**
-```bash
-cd app_api
-bun install  # or npm install
-bun dev      # or npm run dev
-# ➜ http://localhost:3001
-```
-
-**Terminal 3 - Frontend:**
-```bash
-cd frontend
-bun install  # or npm install
-bun dev      # or npm run dev
-# ➜ http://localhost:3000
-```
-
----
-
-## 📁 **Project Structure**
-
-```
-spam_fighter/
-├── 🤖 ai_api/              # FastAPI - AI/ML Processing
-│   ├── main.py             # FastAPI application
-│   ├── models.py           # Pydantic models
-│   ├── config.py           # Configuration management
-│   ├── services/           # LLM routing & services
-│   └── README.md           # AI API documentation
-├── ⚡ app_api/             # Fastify - Core Application  
-│   ├── index.js            # Fastify application
-│   ├── middleware/         # Authentication & middleware
-│   └── README.md           # App API documentation
-├── 🎨 frontend/            # Next.js - User Interface
-│   ├── app/                # Next.js App Router
-│   ├── components/         # React components
-│   └── README.md           # Frontend documentation
-├── 📚 docs/                # Comprehensive Documentation
-│   ├── architecture.md     # System architecture
-│   ├── phase_outline.md    # Development timeline
-│   └── *.md                # Additional documentation
-└── README.md               # This file
-```
-
----
-
-## 🛠️ **Development Phases**
-
-### **Phase 1: Core Intelligence & Control** *(Weeks 1-4)*
-- ✅ Auto-categorization (Marketing, Transactional, etc.)
-- ✅ AI-generated smart replies  
-- ✅ Phishing & malware detection
-
-### **Phase 2: Behavior Insights & Digest** *(Weeks 5-8)*
-- 📧 Email engagement history
-- 📊 Bulk actions and digest generation
-- 🚫 Smart block/allow lists
-
-### **Phase 3: Long-Term Insights & Automation** *(Weeks 9-12)*
-- 📈 Email overload dashboard
-- 📋 Unsubscribe tracking
-- ⚙️ Custom automation rules
-
-**Total Timeline: 12-14 Weeks**
-
----
-
-## 🔧 **Key Features**
+## 🚀 **Key Features**
 
 ### **🤖 LumaOne Core**
 - Email ingestion + LLM classification engine
@@ -179,114 +76,114 @@ spam_fighter/
 
 ---
 
-## 📖 **Documentation**
+## 🌟 **Use Cases**
 
-| Document | Description |
-|----------|-------------|
-| [`docs/architecture.md`](docs/architecture.md) | System architecture overview |
-| [`docs/dual_api.md`](docs/dual_api.md) | Dual-API design details |
-| [`docs/ai_flexability.md`](docs/ai_flexability.md) | Multi-LLM provider support |
-| [`docs/phase_outline.md`](docs/phase_outline.md) | Development timeline |
-| [`docs/stack.md`](docs/stack.md) | Technology stack details |
-| [`ai_api/README.md`](ai_api/README.md) | AI API documentation |
-| [`app_api/README.md`](app_api/README.md) | App API documentation |
-| [`frontend/README.md`](frontend/README.md) | Frontend documentation |
+### **For Individuals**
+- **Email Overload Management**: Automatically categorize and prioritize emails
+- **Spam & Phishing Protection**: Advanced threat detection using AI
+- **Smart Email Responses**: AI-generated reply suggestions
+- **Automated Unsubscribe**: Intelligent unsubscribe management
 
----
+### **For Enterprises**
+- **Multi-Tenant Security**: Isolated tenant data with custom configurations
+- **Custom LLM Integration**: Use your preferred AI providers
+- **Team Collaboration**: Shared rules and insights across teams
+- **Advanced Analytics**: Email trends, sender analysis, and reporting
 
-## 🔐 **Environment Configuration**
-
-### **Required Variables**
-
-**AI API:**
-```env
-SUPABASE_URL=your_supabase_url
-APP_API_SECRET=shared_secret
-OPENAI_API_KEY=your_openai_key  # or other LLM provider
-```
-
-**App API:**
-```env
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-MS_CLIENT_ID=your_microsoft_client_id
-AI_API_URL=http://localhost:8001
-```
-
-**Frontend:**
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+### **For Developers**
+- **API-First Design**: RESTful APIs for easy integration
+- **Multi-LLM Support**: Flexible AI provider configurations
+- **Open Architecture**: Extensible and customizable platform
+- **Modern Tech Stack**: Built with latest technologies
 
 ---
 
-## 🧪 **Testing**
+## 🎯 **Platform Benefits**
 
-```bash
-# AI API tests
-cd ai_api && python -m pytest
+### **🚀 Performance**
+- **Fast Processing**: Optimized AI classification pipeline
+- **Scalable Architecture**: Handles high email volumes
+- **Real-time Updates**: Instant email processing and notifications
 
-# App API tests  
-cd app_api && bun test
+### **🔒 Security**
+- **Multi-Tenant Isolation**: Secure data separation
+- **Advanced Threat Detection**: AI-powered phishing and malware detection
+- **Privacy-First**: Your data stays secure and private
 
-# Frontend tests
-cd frontend && bun test
-```
-
----
-
-## 🚢 **Deployment**
-
-### **Docker Compose** *(Recommended)*
-
-```bash
-docker-compose up -d
-```
-
-### **Individual Services**
-
-- **AI API**: Deploy to any Python hosting (Railway, Fly.io, etc.)
-- **App API**: Deploy to Node.js hosting (Vercel, Railway, etc.)  
-- **Frontend**: Deploy to Vercel, Netlify, or static hosting
-- **Database**: Use Supabase cloud or self-hosted PostgreSQL
+### **🎨 User Experience**
+- **Intuitive Interface**: Clean, modern UI built with Mantine
+- **Mobile Responsive**: Works seamlessly across all devices
+- **Customizable**: Personalize rules and automation
 
 ---
 
-## 🤝 **Contributing**
+## 🛠️ **Technology Innovation**
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### **AI-Powered Intelligence**
+- **Multi-LLM Router**: Dynamic routing between AI providers
+- **Continuous Learning**: Improves accuracy from user feedback
+- **Context-Aware**: Understands email patterns and relationships
 
----
-
-## 📋 **Project Status**
-
-- ✅ **Architecture Designed**: Complete technical specifications
-- ✅ **APIs Scaffolded**: FastAPI (AI) + Fastify (App) with full structure
-- ✅ **Database Schema**: Multi-tenant PostgreSQL design
-- ✅ **Frontend Initialized**: Next.js + Mantine setup
-- 🚧 **Phase 1 Development**: In Progress
+### **Modern Development**
+- **Dual-API Architecture**: Separation of concerns for scalability
+- **TypeScript-Free**: JavaScript-first development approach
+- **Package Manager Optimized**: Uses `bun` for Node.js and `uv` for Python
 
 ---
 
-## 📄 **License**
+## 🌍 **Community & Support**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### **Open Source Philosophy**
+- **MIT Licensed**: Free to use and modify
+- **Community Driven**: Built with developer feedback
+- **Transparent Development**: Open development process
+
+### **Getting Involved**
+- **🐛 Bug Reports**: Help us improve by reporting issues
+- **💡 Feature Requests**: Suggest new capabilities
+- **🤝 Contributions**: Join our development community
+- **📚 Documentation**: Help improve our guides and tutorials
 
 ---
 
-## 📞 **Support**
+## 📊 **Platform Stats**
 
-For questions, issues, or contributions:
-
-- 📧 **Issues**: GitHub Issues
-- 📚 **Documentation**: [`/docs`](docs/) folder
-- 💬 **Discussions**: GitHub Discussions
+- **🏢 Multi-Tenant**: Supports unlimited organizations
+- **🤖 AI Providers**: OpenAI, Azure OpenAI, Ollama, Custom endpoints
+- **📧 Email Categories**: Marketing, Transactional, Spam, Phishing, Personal
+- **⚙️ Automation Rules**: Unlimited custom rules per tenant
+- **📈 Analytics**: Real-time email insights and trends
 
 ---
 
-**Built with ❤️ for better email management** 
+## 🚀 **Get Started**
+
+### **For Users**
+- **Try LumaOne**: Experience intelligent email management
+- **Join Beta**: Get early access to new features
+- **Community**: Connect with other users
+
+### **For Developers**
+- **API Documentation**: Comprehensive guides and examples
+- **SDKs**: Official client libraries for popular languages
+- **Integration Examples**: Sample implementations
+
+### **For Enterprises**
+- **Custom Deployment**: On-premises or cloud options
+- **Professional Support**: Dedicated technical assistance
+- **Training & Onboarding**: Team setup and best practices
+
+---
+
+## 📞 **Contact**
+
+- 🌐 **Website**: [Coming Soon]
+- 📧 **Email**: [Contact Information]
+- 💬 **Community**: GitHub Discussions
+- 📱 **Social**: [Social Media Links]
+
+---
+
+**Built with ❤️ for better email management**
+
+*LumaOne - Illuminating your inbox with AI intelligence* 
